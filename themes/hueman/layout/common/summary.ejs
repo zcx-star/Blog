@@ -1,0 +1,13 @@
+<article class="article article-summary<%= (post.direction && post.direction.toLowerCase() === 'rtl' ? ' rtl' : '') %>">
+    <div class="article-summary-inner">
+        <% if (theme.customize.thumbnail === true) { %>
+        <%- partial('common/thumbnail', { counter: true }) %>
+        <% } %>
+
+        <div class="article-meta">
+            <div class="date"><time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date) %></time></div>
+        </div>
+        <%- partial('post/title', { class_name: 'article-title', linkable: true }) %>
+
+    </div>
+</article>

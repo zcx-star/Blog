@@ -1,0 +1,23 @@
+<% var last, postCount = 0; %>
+
+<div class="archives">
+<section class="archives-wrap">
+<div class="article-row">
+
+<% page.posts.each(function(post, i) 
+{ %>    
+    <%- partial('summary', { post: post }) %>
+<% }) %>
+
+<% if (page.posts.length) 
+{ %>
+    </div></section>
+<% } %>
+
+<% if (page.total > 1) 
+{ %>
+    <nav id="page-nav">
+        <span class="pages"><%= _p('nav.current_page', page.current) %><%= _p('nav.total_page', page.total) %></span>
+        <%- paginator({prev_text: '&laquo;', next_text: '&raquo;'}) %>
+    </nav>
+<% } %>
