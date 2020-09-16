@@ -36,9 +36,11 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 ```
 ![](/images/Shadertoy_03_01.png)
 ### 1. cube
-世界坐标为（ uv, 1.0/tan(a) ），camera space坐标系为（xAxis, yAxis, zAxis ）
+世界坐标为$（ uv,  t = \frac{1.0}{tan(a)} ）$，camera space坐标系为$（xAxis, yAxis, zAxis ）$
 坐标系转换world->camera: 
-vec3 pos = normalize(uv.x \* xAxis + uv.y \* yAxis + 1.0/tan(a) \* zAxis); 
+```
+vec3 pos = normalize(uv.x*xAxis + uv.y*yAxis + 1.0/tan(a)*zAxis); 
+```
 
 ### 2. sphere
 sphere半径为1，求出z，得到世界坐标，转换到camera space

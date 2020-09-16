@@ -28,7 +28,7 @@ Interior Mapping是一种伪造室内场景的实时渲染技术
 
 #### 如何检测相交
 首先只考虑xz方向的平面，平面上任意一点可以表示为（0，h，0）
-如何检测和平面相交在[前一篇](https://zcx-star.github.io/2019/01/28/Shadertoy-01/)里说过了，$ t = \frac{h - r_0.y}{rd.y} $
+如何检测和平面相交在[前一篇](https://zcx-star.github.io/2019/01/28/Shadertoy-01/)里说过了，$ t = \frac{h - ro.y}{rd.y} $
 假设两个平面之间间隔为$d$，那么平面的位置$h$可以表示为$n * d$（ $n$为任意整数）
 但是因为平面是无限延伸的，如果直接做检测相交，光线碰到的永远只有最近的两个平面
 ![](/images/Shadertoy_02_02.png)
